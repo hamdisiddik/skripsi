@@ -1,0 +1,1 @@
+SELECT tbl_transaksi.*, tbl_data_pelanggan.nama_pelanggan, tbl_data_pelanggan.email_pelanggan, tbl_data_pelanggan.alamat_pelanggan, tbl_data_pelanggan.telpon_pelanggan, tbl_produk.nama_produk FROM tbl_transaksi JOIN tbl_data_pelanggan ON tbl_data_pelanggan.id_pelanggan = tbl_transaksi.pelanggan_id JOIN tbl_produk ON tbl_produk.id_produk = tbl_transaksi.produk_id
