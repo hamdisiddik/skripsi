@@ -22,20 +22,20 @@
                                     <th>Nama Pelanggan</th>
                                     <th>Nama Produk</th>
                                     <th>Tanggal Transaksi</th>
-                                    <th>Status Transaksi</th>
+                                    <th>Harga Transaksi</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $data = mysqli_query($koneksi, "SELECT tbl_transaksi.*, tbl_data_pelanggan.nama_pelanggan, tbl_produk.nama_produk FROM tbl_transaksi JOIN tbl_data_pelanggan ON tbl_data_pelanggan.id_pelanggan = tbl_transaksi.pelanggan_id JOIN tbl_produk ON tbl_produk.id_produk = tbl_transaksi.produk_id"); ?>
+                                <?php $data = mysqli_query($koneksi, "SELECT tbl_transaksi.*, tbl_data_pelanggan.nama_pelanggan, tbl_produk.nama_produk FROM tbl_transaksi JOIN tbl_data_pelanggan ON tbl_data_pelanggan.id_pelanggan = tbl_transaksi.pelanggan_id JOIN tbl_produk ON tbl_produk.id_produk = tbl_transaksi.produk_id WHERE status_transaksi = '0'"); ?>
                                 <?php while ($row = mysqli_fetch_assoc($data)) { ?>
                                     <tr>
                                         <td><?= $row['nama_pelanggan'] ?></td>
                                         <td><?= $row['nama_produk'] ?></td>
                                         <td><?= $row['tanggal_transaksi'] ?></td>
-                                        <td><?= $row['status_transaksi'] ?></td>
+                                        <td><?= $row['harga_transaksi'] ?></td>
                                         <td>
-                                            <a href="" class="btn btn-info">Detail</a>
+                                            <a href="index.php?transaksi_detail&id=<?= $row['id_transaksi'] ?>" class="btn btn-info">Detail</a>
                                         </td>
                                     </tr>
                                 <?php } ?>

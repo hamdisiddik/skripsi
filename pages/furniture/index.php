@@ -39,7 +39,7 @@
                                         <td>Rp. <?= number_format($row['harga_furniture']) ?></td>
                                         <td><?= $row['deskripsi_furniture'] ?></td>
                                         <td>
-                                            <img src="assets/img/<?= $row['foto_furniture'] ?>" alt="" style="width: 100px; height: 100px">
+                                            <a class="example-image-link" href="assets/img/<?= $row['foto_furniture'] ?>" data-lightbox="<?= $row['nama_furniture'] ?>" data-title="<?= strip_tags($row['deskripsi_furniture']) ?>"><img style="width: 100px; height: 100px" src="assets/img/<?= $row['foto_furniture'] ?>" alt="<?= $row['nama_furniture'] ?>" /></a>
                                         </td>
                                         <td>
                                             <a href="index.php?hapusfurniture&id=<?= $row['id_furniture'] ?>" class="btn btn-outline-danger" onclick="confirm('Apa anda yakin ?')"><i class="fa fa-trash"></i></a>
@@ -114,8 +114,8 @@ if (isset($_POST['save'])) {
                         <input type="number" name="harga" class="form-control" id="harga" placeholder="Harga Furniture" required autocomplete="off">
                     </div>
                     <div class="form-group">
-                        <label for="alamat">Deskripsi Furniture</label>
-                        <textarea name="deskripsi" id="alamat" class="form-control" placeholder="Deskripsi Furniture" required></textarea>
+                        <label for="ckeditor">Deskripsi Furniture</label>
+                        <textarea name="deskripsi" id="ckeditor" placeholder="Deskripsi Furniture"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="foto">Foto Furniture</label>

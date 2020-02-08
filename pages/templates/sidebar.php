@@ -7,8 +7,8 @@
                     <div class="dot-indicator bg-success"></div>
                 </div>
                 <div class="text-wrapper">
-                    <p class="profile-name">Hamdi Siddik</p>
-                    <p class="designation">INTERIOR USER</p>
+                    <p class="profile-name"><?= $_SESSION['auth']['nama_admin'] ?></p>
+                    <p class="designation">Admin</p>
                 </div>
             </a>
         </li>
@@ -51,7 +51,7 @@
             <div class="collapse" id="transaksi">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?transaksi">Transaksi Pending</a>
+                        <a class="nav-link" href="index.php?transaksi_pending">Transaksi Pending</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="">Transaksi Pembayaran</a>

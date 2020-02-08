@@ -39,13 +39,13 @@
                                             if (empty($row['harga_produk'])) {
                                                 echo "Harga Kosong";
                                             } else {
-                                                echo $row['harga_produk'];
+                                                echo "Rp. " . number_format($row['harga_produk']);
                                             }
                                             ?>
                                         </td>
                                         <td><?= substr($row['deskripsi_produk'], 0, 50) . '...' ?></td>
                                         <td>
-                                            <img src="assets/img/<?= $row['foto_produk'] ?>" alt="" style="width: 100px; height: 100px">
+                                            <a class="example-image-link" href="assets/img/<?= $row['foto_produk'] ?>" data-lightbox="<?= $row['nama_produk'] ?>" data-title="<?= strip_tags($row['deskripsi_produk']) ?>"><img style="width: 100px; height: 100px" src="assets/img/<?= $row['foto_produk'] ?>" alt="<?= $row['nama_produk'] ?>" /></a>
                                         </td>
                                         <td>
                                             <a href="index.php?hapusproduk&id=<?= $row['id_produk'] ?>" class="btn btn-outline-danger" onclick="confirm('Apa anda yakin ?')"><i class="fa fa-trash"></i></a>
@@ -98,9 +98,7 @@ if (isset($_POST['save'])) {
                     </div>
                     <div class="form-group">
                         <label for="alamat">Deskripsi Produk</label>
-                        <textarea name="deskripsi" id="editor">
-                            deskirpsi produk
-                        </textarea>
+                        <textarea name="deskripsi" id="ckeditor" placeholder="deskirpsi produk"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="foto">Foto Produk</label>
