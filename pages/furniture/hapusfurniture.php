@@ -5,6 +5,7 @@ $row = mysqli_fetch_assoc($query);
 $foto = $row['foto_furniture'];
 $idproduk = $row['produk_id'];
 $harga = $row['harga_furniture'];
+$idproduk = $_GET['idproduk'];
 
 if (file_exists("./assets/img/$foto")) {
     unlink("./assets/img/$foto");
@@ -19,4 +20,4 @@ $totalharga = $hargaproduk - $harga;
 mysqli_query($koneksi, "UPDATE tbl_produk SET harga_produk = '$totalharga' WHERE id_produk = '$idproduk'");
 
 echo "<script>alert('Data berhasil hapus')</script>";
-echo "<script>location='index.php?furniture'</script>";
+echo "<script>location='index.php?furniture&id=$idproduk'</script>";

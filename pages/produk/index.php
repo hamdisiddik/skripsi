@@ -50,6 +50,9 @@
                                         <td>
                                             <a href="index.php?hapusproduk&id=<?= $row['id_produk'] ?>" class="btn btn-outline-danger" onclick="confirm('Apa anda yakin ?')"><i class="fa fa-trash"></i></a>
                                             <button class="btn btn-outline-warning"><i class="fa fa-edit"></i></button>
+                                            <a href="index.php?furniture&id=<?= $row['id_produk'] ?>" class="btn btn-outline-info">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
                                         </td>
                                     </tr>
                                 <?php } ?>
