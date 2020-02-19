@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 08, 2020 at 04:14 PM
+-- Generation Time: Feb 19, 2020 at 01:46 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -41,7 +41,7 @@ CREATE TABLE `tbl_admin` (
 --
 
 INSERT INTO `tbl_admin` (`id_admin`, `nama_admin`, `email_admin`, `password_admin`, `foto_admin`) VALUES
-(1, 'Febri Maulana Yunus', 'febriyunus@gmail.com', '$2y$10$EvD8g71lW7IITPf07/vX4uV/itWk9P1yxiyeTcttW13DlvHxCEc.W', '');
+(1, 'Febri Maulana yunus', 'febriyunus@gmail.com', '$2y$10$RWFt1aSFgD6ePt1QU/UyUujM1Vn6f3S2vEdHgEwqQIH6inQaQzb96', '20200219082853.JPG');
 
 -- --------------------------------------------------------
 
@@ -107,9 +107,8 @@ CREATE TABLE `tbl_furniture` (
 --
 
 INSERT INTO `tbl_furniture` (`id_furniture`, `produk_id`, `nama_furniture`, `deskripsi_furniture`, `harga_furniture`, `foto_furniture`) VALUES
-(17, 9, 'Bangku mini', 'tetsada', 400000, '20200202153716.jpg'),
-(18, 8, 'test', '<p>test</p>', 90000, '20200208043807.JPG'),
-(19, 8, 'asdadadsad', '<p>asdasdadadaadada</p>', 90000, '20200208054125.JPG');
+(35, 21, 'asdasd', '<p>asdadsa</p>', 1000000, '20200218184053.JPG'),
+(36, 21, 'asdadasd', '<p>asdad</p>', 900000, '20200218184106.JPG');
 
 -- --------------------------------------------------------
 
@@ -130,8 +129,7 @@ CREATE TABLE `tbl_produk` (
 --
 
 INSERT INTO `tbl_produk` (`id_produk`, `nama_produk`, `deskripsi_produk`, `harga_produk`, `foto_produk`) VALUES
-(8, 'Ruang Makan', '<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>', '180000', '20200124194957.jpg'),
-(9, 'kamar modern', '<p>deskirpsi produk</p>', '400000', '20200124202411.jpg');
+(21, 'febri maulana test', '<p>dasdasd</p>', '1900000', '20200218184040.JPG');
 
 -- --------------------------------------------------------
 
@@ -146,7 +144,7 @@ CREATE TABLE `tbl_transaksi` (
   `harga_transaksi` varchar(128) NOT NULL,
   `foto_pembayaran` varchar(255) DEFAULT NULL,
   `tanggal_transaksi` datetime NOT NULL,
-  `status_transaksi` enum('0','1','2') NOT NULL
+  `status_transaksi` enum('0','1','2','3') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -154,7 +152,7 @@ CREATE TABLE `tbl_transaksi` (
 --
 
 INSERT INTO `tbl_transaksi` (`id_transaksi`, `pelanggan_id`, `produk_id`, `harga_transaksi`, `foto_pembayaran`, `tanggal_transaksi`, `status_transaksi`) VALUES
-(1, 20, 8, '9000000', NULL, '2020-02-09 00:00:00', '0');
+(1, 20, 21, '9000000', '20200218184040.JPG', '2020-02-09 00:00:00', '3');
 
 --
 -- Indexes for dumped tables
@@ -222,13 +220,13 @@ ALTER TABLE `tbl_data_produk`
 -- AUTO_INCREMENT for table `tbl_furniture`
 --
 ALTER TABLE `tbl_furniture`
-  MODIFY `id_furniture` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_furniture` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `tbl_produk`
 --
 ALTER TABLE `tbl_produk`
-  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_produk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tbl_transaksi`
