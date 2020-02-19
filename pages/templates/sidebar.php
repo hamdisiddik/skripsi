@@ -1,13 +1,13 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item nav-profile">
-            <a href="#" class="nav-link">
+            <a href="index.php" class="nav-link">
                 <div class="profile-image">
-                    <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="profile image">
+                    <img class="img-xs rounded-circle" src="assets/img/<?= $datarow['foto_admin'] ?>" alt="profile image">
                     <div class="dot-indicator bg-success"></div>
                 </div>
                 <div class="text-wrapper">
-                    <p class="profile-name"><?= $_SESSION['auth']['nama_admin'] ?></p>
+                    <p class="profile-name"><?= $datarow['nama_admin'] ?></p>
                     <p class="designation">Admin</p>
                 </div>
             </a>
@@ -43,10 +43,13 @@
                         <a class="nav-link" href="index.php?transaksi_pending">Transaksi Pending</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Transaksi Pembayaran</a>
+                        <a class="nav-link" href="index.php?transaksi_pembayaran">Transaksi Pembayaran</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Transaksi Verivikasi</a>
+                        <a class="nav-link" href="index.php?transaksi_verifikasi">Transaksi Verivikasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?produk_diterima">Produk Diterima</a>
                     </li>
                 </ul>
             </div>

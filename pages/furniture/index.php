@@ -18,13 +18,17 @@ $qrow = mysqli_fetch_assoc($qdata);
         <div class="col-md-12 grid-margin">
             <div class="card">
                 <div class="card-body">
+
                     <h2 class="card-title pb-2">
                         Data Furniture
                         <button type="button" class="btn btn-outline-primary float-right" data-toggle="modal" data-target="#exampleModal">
                             <i class="fa fa-plus"></i>
                         </button><br>
-                        Total Harga: Rp. <?= number_format($qrow['harga_produk']) ?>
+                        <?php if (!empty($qrow['harga_produk'])) { ?>
+                            Total Harga: Rp. <?= number_format($qrow['harga_produk']) ?>
+                        <?php } ?>
                     </h2>
+
                     <div class="table-responsive">
                         <table id="example" class="table table-striped text-center">
                             <thead>
@@ -42,13 +46,13 @@ $qrow = mysqli_fetch_assoc($qdata);
                                     <tr>
                                         <td><?= $row['nama_furniture'] ?></td>
                                         <td>Rp. <?= number_format($row['harga_furniture']) ?></td>
-                                        <td><?= substr($row['deskripsi_furniture'], 0, 25) . '...' ?></td>
+                                        <td><?= substr($row['deskripsi_furniture'], 0, 25) ?></td>
                                         <td>
                                             <a class="example-image-link" href="assets/img/<?= $row['foto_furniture'] ?>" data-lightbox="<?= $row['nama_furniture'] ?>" data-title="<?= strip_tags($row['deskripsi_furniture']) ?>"><img style="width: 100px; height: 100px" src="assets/img/<?= $row['foto_furniture'] ?>" alt="<?= $row['nama_furniture'] ?>" /></a>
                                         </td>
                                         <td>
                                             <a href="index.php?hapusfurniture&id=<?= $row['id_furniture'] ?>&idproduk=<?= $row['produk_id'] ?>" class="btn btn-outline-danger" onclick="confirm('Apa anda yakin ?')"><i class="fa fa-trash"></i></a>
-                                            <button class="btn btn-outline-warning"><i class="fa fa-edit"></i></button>
+                                            <a href="index.php?ubahfurniture&id=<?= $row['id_furniture'] ?>&idurl=<?= $idproduk ?>" class="btn btn-outline-warning"><i class="fa fa-edit"></i></a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -80,7 +84,7 @@ if (isset($_POST['save'])) {
     $query = mysqli_query($koneksi, "SELECT * FROM tbl_produk WHERE id_produk = '$produk'");
     $row = mysqli_fetch_assoc($query);
     $hargaproduk = $row['harga_produk'];
-    $totalharga = $hargaproduk + $harga;
+    $totalharga = intval($hargaproduk) + intval($harga);
 
     mysqli_query($koneksi, "UPDATE tbl_produk SET harga_produk = '$totalharga' WHERE id_produk = '$produk'");
 

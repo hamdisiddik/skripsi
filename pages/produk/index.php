@@ -43,13 +43,13 @@
                                             }
                                             ?>
                                         </td>
-                                        <td><?= substr($row['deskripsi_produk'], 0, 50) . '...' ?></td>
+                                        <td><?= substr($row['deskripsi_produk'], 0, 50) ?></td>
                                         <td>
                                             <a class="example-image-link" href="assets/img/<?= $row['foto_produk'] ?>" data-lightbox="<?= $row['nama_produk'] ?>" data-title="<?= strip_tags($row['deskripsi_produk']) ?>"><img style="width: 100px; height: 100px" src="assets/img/<?= $row['foto_produk'] ?>" alt="<?= $row['nama_produk'] ?>" /></a>
                                         </td>
                                         <td>
                                             <a href="index.php?hapusproduk&id=<?= $row['id_produk'] ?>" class="btn btn-outline-danger" onclick="confirm('Apa anda yakin ?')"><i class="fa fa-trash"></i></a>
-                                            <button class="btn btn-outline-warning"><i class="fa fa-edit"></i></button>
+                                            <a href="index.php?ubahproduk&id=<?= $row['id_produk'] ?>" class="btn btn-outline-warning"><i class="fa fa-edit"></i></a>
                                             <a href="index.php?furniture&id=<?= $row['id_produk'] ?>" class="btn btn-outline-info">
                                                 <i class="fas fa-eye"></i>
                                             </a>
