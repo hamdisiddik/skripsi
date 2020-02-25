@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 19, 2020 at 01:46 PM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.8
+-- Host: localhost
+-- Generation Time: Feb 25, 2020 at 01:51 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,7 +41,7 @@ CREATE TABLE `tbl_admin` (
 --
 
 INSERT INTO `tbl_admin` (`id_admin`, `nama_admin`, `email_admin`, `password_admin`, `foto_admin`) VALUES
-(1, 'Febri Maulana yunus', 'febriyunus@gmail.com', '$2y$10$RWFt1aSFgD6ePt1QU/UyUujM1Vn6f3S2vEdHgEwqQIH6inQaQzb96', '20200219082853.JPG');
+(2, 'admin', 'admin@gmail.com', '$2y$10$GkSa7aE9eZXVBBankcm.J.0T25EQVdVMxuwE0cx9GaX7ak1My7l/2', 'test.jpg');
 
 -- --------------------------------------------------------
 
@@ -202,7 +202,7 @@ ALTER TABLE `tbl_transaksi`
 -- AUTO_INCREMENT for table `tbl_admin`
 --
 ALTER TABLE `tbl_admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_data_pelanggan`
