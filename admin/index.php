@@ -6,7 +6,7 @@ if (isset($_SESSION['auth'])) {
   $query = mysqli_query($koneksi, "SELECT * FROM tbl_admin WHERE id_admin = '$id'");
   $datarow = mysqli_fetch_assoc($query);
 
-  if (isset($_POST['save'])) {
+  if (isset($_POST['saveprofile'])) {
     $password1 = $_POST['password'];
     $password2 = $_POST['password2'];
     if ($password1 === $password2) {
@@ -146,7 +146,7 @@ if (isset($_SESSION['auth'])) {
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                    <button type="submit" name="save" class="btn btn-primary">Edit</button>
+                    <button type="submit" name="saveprofile" class="btn btn-primary">Edit</button>
                   </div>
                 </form>
               </div>
