@@ -64,7 +64,6 @@ if (isset($_POST['save'])) {
     $nama = $_POST['nama'];
     $email = $_POST['email'];
     $alamat = $_POST['alamat'];
-    $kelamin = $_POST['kelamin'];
     $password1 = $_POST['password1'];
     $password2 = $_POST['password2'];
     $enkripsi_pass = password_hash($password1, PASSWORD_DEFAULT);
@@ -74,7 +73,7 @@ if (isset($_POST['save'])) {
             echo "<script>alert('Nomer telpon lebih dari 12 karakter')</script>";
             echo "<script>location='index.php?kelolapelanggan'</script>";
         } else {
-            mysqli_query($koneksi, "INSERT INTO tbl_data_pelanggan VALUES('', '$email','$enkripsi_pass', '$nama', '$alamat', '$telpon', '$kelamin')");
+            mysqli_query($koneksi, "INSERT INTO tbl_data_pelanggan(email_pelanggan, password_pelanggan, nama_pelanggan, alamat_pelanggan, telpon_pelanggan) VALUES('$email','$enkripsi_pass', '$nama', '$alamat', '$telpon')");
             echo "<script>alert('Data berhasil ditambahkan')</script>";
             echo "<script>location='index.php?kelolapelanggan'</script>";
         }
@@ -110,19 +109,8 @@ if (isset($_POST['save'])) {
                         <textarea name="alamat" id="alamat" class="form-control" placeholder="Alamat Pelanggan" required></textarea>
                     </div>
                     <div class="form-group">
-                        <div class="row">
-                            <div class="col">
-                                <label for="telpon">Telpon Pelanggan</label>
-                                <input type="number" name="telpon" class="form-control" id="telpon" placeholder="Telpon Pelanggan" required autocomplete="off" minlength="12">
-                            </div>
-                            <div class="col">
-                                <label for="kelamin">Jenis Kelamin</label>
-                                <select name="kelamin" id="kelamin" class="form-control">
-                                    <option value="Laki - Laki">Laki - Laki</option>
-                                    <option value="Perempuan">Perempuan</option>
-                                </select>
-                            </div>
-                        </div>
+                        <label for="telpon">Telpon Pelanggan</label>
+                        <input type="number" name="telpon" class="form-control" id="telpon" placeholder="Telpon Pelanggan" required autocomplete="off" minlength="12">
                     </div>
                     <div class="form-group">
                         <div class="row">
