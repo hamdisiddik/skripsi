@@ -79,7 +79,7 @@ if (isset($_POST['save'])) {
     $harga = $_POST['harga'];
     $deskripsi = $_POST['deskripsi'];
 
-    mysqli_query($koneksi, "INSERT INTO tbl_furniture VALUES('','$produk','$nama','$deskripsi', '$harga', '$namefoto')");
+    mysqli_query($koneksi, "INSERT INTO tbl_furniture(produk_id, nama_furniture, deskripsi_furniture, harga_furniture, foto_furniture) VALUES('$produk','$nama','$deskripsi', '$harga', '$namefoto')");
 
     $query = mysqli_query($koneksi, "SELECT * FROM tbl_produk WHERE id_produk = '$produk'");
     $row = mysqli_fetch_assoc($query);

@@ -77,7 +77,7 @@ if (isset($_POST['save'])) {
     $nama = $_POST['nama'];
     $deskripsi = $_POST['deskripsi'];
 
-    mysqli_query($koneksi, "INSERT INTO tbl_produk VALUES('', '$nama','$deskripsi', '', '$namefoto')");
+    mysqli_query($koneksi, "INSERT INTO tbl_produk(nama_produk, deskripsi_produk, foto_produk) VALUES('$nama','$deskripsi', '$namefoto')");
     echo "<script>alert('Data berhasil ditambahkan')</script>";
     echo "<script>location='index.php?produk'</script>";
 }

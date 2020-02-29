@@ -9,7 +9,7 @@ if (isset($_SESSION['user'])) {
     mysqli_query($koneksi, "INSERT INTO tbl_transaksi(pelanggan_id, produk_id, harga_transaksi, tanggal_transaksi, status_transaksi) VALUES('$idpelanggan', '$produkid', '$harga', '$tanggal', '$status')");
 
     echo "<script>alert('Silahkan lakukan pembayaran')</script>";
-    echo "<script>location='index.php'</script>";
+    echo "<script>location='index.php?keranjang'</script>";
 } else {
     echo "<script>alert('Silahkan Login terlebih dahulu')</script>";
     echo "<script>location='pages/login/index.php'</script>";
