@@ -6,9 +6,10 @@ if (isset($_POST['bayar'])) {
     $format = end($peach);
     $namefoto = date('YmdHis') . '.' . $format;
     $lokasi = $_FILES['foto']['tmp_name'];
+    $idtrx = $_POST['id'];
     move_uploaded_file($lokasi, "./admin/assets/img/$namefoto");
 
-    mysqli_query($koneksi, "UPDATE tbl_transaksi SET foto_pembayaran = '$namefoto', status_transaksi = '1'");
+    mysqli_query($koneksi, "UPDATE tbl_transaksi SET foto_pembayaran = '$namefoto', status_transaksi = '1' WHERE id_transaksi = '$idtrx'");
 
     echo "<script>alert('Pembayaran sedang dalam pengecekan')</script>";
     echo "<script>location='index.php?keranjang'</script>";
